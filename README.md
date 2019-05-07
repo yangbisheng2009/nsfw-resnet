@@ -1,6 +1,6 @@
-<center>
-<img src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/nsfw-detector.jpeg" alt="NSFW logo" width="300" />
-</center>
+<div align=center>
+  <img width=200 src="http://qnfile.devzhao.com/blog/2018-10-22-jhk-1540210533410.jpeg" >
+</div>
 
 # NSFW
 
