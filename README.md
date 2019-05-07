@@ -1,5 +1,5 @@
 <center>
-<img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike116%2C5%2C5%2C116%2C38/sign=f271a03db3014a9095334eefc81e5277/a8014c086e061d95e61d28b771f40ad163d9cae2.jpg" alt="NSFW Detector logo" width="300" />
+<img src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/nsfw-detector.jpeg" alt="NSFW logo" width="300" />
 </center>
 
 # NSFW
