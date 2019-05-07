@@ -1,5 +1,5 @@
 <div align=center>
-  <img width=200 src="http://qnfile.devzhao.com/blog/2018-10-22-jhk-1540210533410.jpeg" >
+  <img width=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/nsfw-detector.jpeg" >
 </div>
 
 # NSFW
