@@ -20,13 +20,8 @@ pytorch 0.4.0
 
 ## Usage
 
-```python
-
-```
-
-python train.py --model resnet50 --epochs 100
-
 ```shell
+python train.py --model resnet50 --epochs 100
 
 ```
 
