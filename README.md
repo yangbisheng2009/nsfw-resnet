@@ -3,6 +3,7 @@
 </div>
 
 # NSFW
+NSFW - not safe for work
 
 ![Python 2.6](https://img.shields.io/badge/python-2.7-green.svg?style=plastic)
 ![Pytorch 0.4.0](https://img.shields.io/badge/pytorch-0.4.0-green.svg?style=plastic)
@@ -10,7 +11,6 @@
 ![License CC BY-NC](https://img.shields.io/badge/license-CC_BY--NC-green.svg?style=plastic)
 
 ## Description
-
 Trained on 300,000 labled pictures:
 
 - `porn` - pornography images
@@ -20,33 +20,38 @@ Trained on 300,000 labled pictures:
 - `drawings` - safe for work drawings (including anime)
 
 ## Requeriments
-
 pytorch 0.4.0
 
 ## Usage
-
 ```shell
-python train.py --model resnet101 --epochs 100
+#train
+python train.py --model resnet101 --epochs 90 --batch-size 512 --checkpoint ./checkpoint --data-dir ./data
+
+#predict
+python predict --model resnet101 --checkpoint ./checkpoint/x
 
 ```
+
+## Data source
+Special thanks to the [nsfw_data_scraper](https://github.com/alexkimxyz/nsfw_data_scrapper) for the training data.  If you're interested in a more detailed analysis of types of NSFW images, you could probably use this repo code with [this data](https://github.com/EBazarov/nsfw_data_source_urls).  
+If you want make better result.Contact [me](https://twitter.com/yangbisheng2009).I can provide you the best training data.  
 
 ## Current status
 
 ## Detail
-
 I have tried various methods include some pretrained models like resnet/inceptionv3 and data augumentation and finetuing.
 
 Here are some tips which make a greate effect to the final result:
 
-- data augumentation - make image rotaed,shifted,cropped,zoomed,flipped
-- use pretrained model - use pretrained model by torchvision
-- lock some layer and finetune FC - after train_init.py then lock some layer just finetune the FC
-- adjust batch size - adjust the batch size meke it faster
-- adjust learning rate - make lr dynamic when training in order to get saddle point
+- Make batch size bigger.(the bigger the better since I make it 512 with my p40)
+- Use pretrained model.(you can use torchvision. pretrained model can help your model convergence more faster)
+- Lock some layer and finetune FC.(after train_init.py then lock some layer just finetune the FC)
+- Adjust learning rate.(make lr dynamic when training in order to get saddle point)
+- Select appropriate pretrained model.(I choose resnet101 since it receive better result than resnet50 or inceptionv3)
 
 ## Thanks
 Thanks for my wife FeiFei Li. She gave me lots of encouragement. And made the beautiful logo for NSFW preject.  
-Thanks for my workmate Kuai Li. He gave me lots of good suggestion.
+Thanks for my workmate Kuai Li. He gave me lots of good suggestion.  
 
 ## Join us
 If you have good points.Join us!
