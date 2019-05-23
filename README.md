@@ -47,12 +47,13 @@ If you want make better result.Contact [me](https://twitter.com/yangbisheng2009)
 Sexy and porn is a tille similar.In my view,it does'nt matter.
   
   
-SEXY
+**SEXY**
 <div align=left>
   <img width=200 height=250 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/sexy_demo.jpg" >
 </div>
-
-NETURAL
+  
+  
+**NETURAL**
 <div align=left>
   <img width=200 height=250 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/netural_demo.jpg" >
 </div>
