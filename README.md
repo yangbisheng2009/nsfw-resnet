@@ -45,15 +45,16 @@ If you want make better result.Contact [me](https://twitter.com/yangbisheng2009)
 </div>
 
 Sexy and porn is a tille similar.In my view,it does'nt matter.
-
+  
+  
 SEXY
 <div align=left>
-  <img width=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/sexy_demo.jpg" >
+  <img width=300 height=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/sexy_demo.jpg" >
 </div>
 
 NETURAL
 <div align=left>
-  <img width=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/netural_demo.jpg" >
+  <img width=300 height=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/netural_demo.jpg" >
 </div>
 
 ## Detail
