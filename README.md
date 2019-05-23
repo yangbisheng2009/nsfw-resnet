@@ -40,11 +40,22 @@ Special thanks to the [nsfw_data_scraper](https://github.com/alexkimxyz/nsfw_dat
 If you want make better result.Contact [me](https://twitter.com/yangbisheng2009).I can provide you the best training data.  
 
 ## Current status
-<div align=center>
+<div align=left>
   <img width=700 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/test_confusion_matrix.jpg" >
 </div>
 
 Sexy and porn is a tille similar.In my view,it does'nt matter.
+
+SEXY
+<div align=left>
+  <img width=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/sexy_demo.jpg" >
+</div>
+
+NETURAL
+<div align=left>
+  <img width=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/netural_demo.jpg" >
+</div>
+
 ## Detail
 I have tried various methods include some pretrained models like resnet/inceptionv3 and data augumentation and finetuing.
 
