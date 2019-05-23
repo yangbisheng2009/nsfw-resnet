@@ -49,12 +49,12 @@ Sexy and porn is a tille similar.In my view,it does'nt matter.
   
 SEXY
 <div align=left>
-  <img width=300 height=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/sexy_demo.jpg" >
+  <img width=200 height=250 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/sexy_demo.jpg" >
 </div>
 
 NETURAL
 <div align=left>
-  <img width=300 height=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/netural_demo.jpg" >
+  <img width=200 height=250 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/netural_demo.jpg" >
 </div>
 
 ## Detail
