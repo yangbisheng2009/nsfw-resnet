@@ -41,7 +41,7 @@ If you want make better result.Contact [me](https://twitter.com/yangbisheng2009)
 
 ## Current status
 <div align=center>
-  <img width=400 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/test_confusion_matrix.jpg" >
+  <img width=700 src="https://github.com/yangbisheng2009/nsfw-resnet/blob/master/image/test_confusion_matrix.jpg" >
 </div>
 
 Sexy and porn is a tille similar.In my view,it does'nt matter.
