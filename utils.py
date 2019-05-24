@@ -4,7 +4,27 @@ import numpy as np
 import random
 from torch.utils.data.dataset import Dataset
 from PIL import Image, ImageFilter, ImageEnhance
+from torchvision import transforms
+import requests
+import cStringIO
+import urlparse
 
+
+def image_loader_url(url, tsfms):
+    # image = Image.open(url).convert('RGB')
+    header_info = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1581.2 Safari/537.36',
+        'Host': urlparse.urlparse(url).hostname,
+        'Origin': urlparse.urlparse(url).hostname,
+        'Connection': 'keep-alive',
+        # 'Referer': urlparse.urlparse(url).hostname,
+        'Content-Type': 'application/x-www-form-urlencoded',
+            }
+    image = requests.get(url, timeout=3, headers=header_info).content
+    image = Image.open(cStringIO.StringIO(image)).convert('RGB')
+    image_tensor = tsfms(image)
+    # fake batch dimension required to fit network's input dimensions
+    return image_tensor
 
 def randomFlip(image, prob=0.5):
     rnd = np.random.random_sample()
