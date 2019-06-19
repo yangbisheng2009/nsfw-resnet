@@ -34,7 +34,7 @@ python test_confusion_matrix.py
 python predict --model resnet101 --checkpoint ./checkpoint/x
 
 #if your machine has connected to the internet and you dosen't want to download the image to your disk
-cat urls.txt python predict_url.py
+cat urls.txt | python predict_url.py
 ```
 
 ## Training data source
