@@ -12,23 +12,6 @@ import torch.nn.functional as F
 
 import utils
 
-class FC(nn.Module):
-    def __init__(self, in_channels, out_channels, **kwargs):
-        super(FC, self).__init__()
-        self.fc1 = nn.Linear(in_channels, 256)
-        self.fc2 = nn.Linear(256, 128)
-        self.fc3 = nn.Linear(128, out_channels)
-
-    def forward(self, x):
-        x = self.fc1(x)
-        x = F.relu(x, inplace=True)
-        x = F.dropout(x, p=0.5,  training=self.training)
-        x = self.fc2(x)
-        x = F.relu(x, inplace=True)
-        x = F.dropout(x, p=0.25,  training=self.training)
-        x = self.fc3(x)
-        return x
-
 
 def train_one_epoch(model, criterion, optimizer, data_loader, epoch, val_dataloader, classes):
     epoch_start = time.time()
@@ -69,12 +52,12 @@ def train_one_epoch(model, criterion, optimizer, data_loader, epoch, val_dataloa
             # the first or best will save
             if len(g_val_accs) == 0 or val_acc > g_val_accs.get(max(g_val_accs, key=g_val_accs.get), 0.0):
                 print('*** GET BETTER RESULT READY SAVE ***')
-                if args.output_dir:
+                if args.checkpoints:
                     torch.save({
                         'model': model.state_dict(),
                         'classes': classes,
                         'args': args},
-                        os.path.join(args.output_dir, 'model_{}_{}.pth'.format(epoch, i)))
+                        os.path.join(args.checkpoints, 'model_{}_{}.pth'.format(epoch, i)))
                     print('*** SAVE.DONE. VAL_BEST_INDEX: {}_{}, VAL_BEST_ACC: {} ***'.format(epoch, i, val_acc))
             g_val_accs[str(epoch)+'_'+str(i)] = val_acc
             k = max(g_val_accs, key=g_val_accs.get)
@@ -236,7 +219,7 @@ if __name__ == "__main__":
     parser.add_argument('--lr-gamma', default=0.1, type=float, help='decrease lr by a factor of lr-gamma')
     parser.add_argument('--print-freq', default=100, type=int, help='print frequency')
     parser.add_argument('--eval-freq', default=200, type=int, help='validation frequency of batchs')
-    parser.add_argument('--output-dir', default='./checkpoint/11', help='path where to save')
+    parser.add_argument('--checkpoints', default='./checkpoints', help='path where to save')
     parser.add_argument('--resume', default='', help='resume from checkpoint')
     parser.add_argument(
         "--test-only",
@@ -247,11 +230,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    if args.output_dir:
-        try:
-            os.makedirs(args.output_dir)
-        except:
-            pass
+    if not os.path.exists(args.checkpoints):
+        os.mkdir(args.checkpoints)
 
     g_val_accs = {}
 
