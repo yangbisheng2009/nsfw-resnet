@@ -83,6 +83,9 @@ You can attach me by:
 yangbisheng2009@gmail.com  
 https://twitter.com/yangbisheng2009
 
+## References
+https://github.com/GantMan/nsfw_model  
+
 ***
 ## 概述
 基于60万图片数据训练性感&色情模型，标签如下：  
