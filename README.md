@@ -20,7 +20,8 @@ Trained on 600,000 labled pictures:
 - `drawings` - safe for work drawings (including anime)
 
 ## Requeriments
-pytorch 0.4.0
+pytorch 0.4.0  
+谁能帮我升级到pytorch 1.X，欢迎merge
 
 ## Usage
 ```shell
