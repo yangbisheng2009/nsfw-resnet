@@ -5,8 +5,8 @@
 # NSFW
 NSFW - not safe for work
 
-![Python 2.7](https://img.shields.io/badge/python-2.7-green.svg?style=plastic)
-![Pytorch 0.4.0](https://img.shields.io/badge/pytorch-0.4.0-green.svg?style=plastic)
+![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic)
+![Pytorch 1.4.0](https://img.shields.io/badge/pytorch-1.4.0-green.svg?style=plastic)
 ![cuDNN 7.3.1](https://img.shields.io/badge/cudnn-7.3.1-green.svg?style=plastic)
 ![License CC BY-NC](https://img.shields.io/badge/license-CC_BY--NC-green.svg?style=plastic)
 
@@ -20,8 +20,7 @@ Trained on 600,000 labled pictures:
 - `drawings` - safe for work drawings (including anime)
 
 ## Requeriments
-pytorch 0.4.0  
-谁能帮我升级到pytorch 1.X，欢迎merge
+pytorch 1.0+  
 
 ## Usage
 ```shell

@@ -190,8 +190,8 @@ def main(args):
     print("Start training")
     start_time = time.time()
     for epoch in range(args.epochs):
-        lr_scheduler.step()
         train_one_epoch(model, criterion, optimizer, data_loader, epoch, val_dataloader, classes)
+        lr_scheduler.step()
 
     total_time = time.time() - start_time
     total_time_str = str(datetime.timedelta(seconds=int(total_time)))
@@ -204,7 +204,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--data-dir', default='/data/user/yangfg/corpus/kar-data', help='dataset')
     parser.add_argument('--model', default='resnet101', help='model')
-    parser.add_argument('--device', default=[0,1,2,3], help='device')
+    parser.add_argument('--device', default=[0], help='device')
     parser.add_argument('-b', '--batch-size', default=512, type=int)
     parser.add_argument('--epochs', default=90, type=int, metavar='N',
                         help='number of total epochs to run')
@@ -217,8 +217,8 @@ if __name__ == "__main__":
                         metavar='W', help='weight decay (default: 1e-4)',
                         dest='weight_decay')
     parser.add_argument('--lr-gamma', default=0.1, type=float, help='decrease lr by a factor of lr-gamma')
-    parser.add_argument('--print-freq', default=100, type=int, help='print frequency')
-    parser.add_argument('--eval-freq', default=200, type=int, help='validation frequency of batchs')
+    parser.add_argument('--print-freq', default=10, type=int, help='print frequency')
+    parser.add_argument('--eval-freq', default=50, type=int, help='validation frequency of batchs')
     parser.add_argument('--checkpoints', default='./checkpoints', help='path where to save')
     parser.add_argument('--resume', default='', help='resume from checkpoint')
     parser.add_argument(
