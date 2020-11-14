@@ -21,6 +21,7 @@ Trained on 600,000 labled pictures:
 
 ## Requeriments
 pytorch 1.0+  
+If you want pytorch 0.4, please download V1 release.  
 
 ## Usage
 ```shell
