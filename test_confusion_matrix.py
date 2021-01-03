@@ -20,7 +20,7 @@ from sklearn.metrics import confusion_matrix
 
 def test(model, criterion, data_loader, classes):
     n = len(data_loader.dataset)
-    print(n)
+    #print(n)
     y_pred = np.zeros((n))
     y_true = np.zeros((n))
 
@@ -34,7 +34,7 @@ def test(model, criterion, data_loader, classes):
             scope = image.size(0)
             _, preds = torch.max(output, 1)
 
-            print(index, scope)
+            #print(index, scope)
             y_pred[index:index+scope] = preds.view(-1).cpu().numpy()
             y_true[index:index+scope] = target.data.cpu().numpy()
 
@@ -127,7 +127,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--data-dir', default='/data/user/yangfg/corpus/kar-data', help='dataset')
     parser.add_argument('--model', default='resnet101', help='model')
-    parser.add_argument('--device', default=[0,1,2,3], help='device')
+    parser.add_argument('--device', default=[0], help='device')
     parser.add_argument('-b', '--batch-size', default=8, type=int)
     parser.add_argument('-j', '--workers', default=16, type=int, metavar='N',
                         help='number of data loading workers (default: 16)')

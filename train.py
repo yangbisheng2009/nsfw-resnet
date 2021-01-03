@@ -2,6 +2,7 @@ from __future__ import print_function
 import datetime
 import os
 import time
+import math
 
 import torch
 import torch.utils.data
@@ -19,6 +20,7 @@ def train_one_epoch(model, criterion, optimizer, data_loader, epoch, val_dataloa
     running_loss = 0.0
     running_corrects = 0
     epoch_data_len = len(data_loader.dataset)
+    print('Train data num: {}'.format(epoch_data_len))
 
     for i, (image, target) in enumerate(data_loader):
         batch_start = time.time()
@@ -41,7 +43,7 @@ def train_one_epoch(model, criterion, optimizer, data_loader, epoch, val_dataloa
         batch_end = time.time()
         if i % args.print_freq == 0 and i != 0:
             print('[TRAIN] Epoch: {}/{}, Batch: {}/{}, BatchAcc: {:.4f}, BatchLoss: {:.4f}, BatchTime: {:.4f}'.format(epoch,
-                  args.epochs, i, epoch_data_len/args.batch_size, correct_.double()/image.size(0),
+                  args.epochs, i, math.ceil(epoch_data_len/args.batch_size), correct_.double()/image.size(0),
                   loss_/image.size(0), batch_end-batch_start))
 
         # if this result is the best, save it
@@ -79,6 +81,7 @@ def evaluate(model, criterion, data_loader, epoch, step):
     running_loss = 0.0
     running_corrects = 0
     epoch_data_len = len(data_loader.dataset)
+    print('Val data num: {}'.format(epoch_data_len))
 
     with torch.no_grad():
         for i, (image, target) in enumerate(data_loader):
@@ -98,7 +101,7 @@ def evaluate(model, criterion, data_loader, epoch, step):
             batch_end = time.time()
             if i % args.print_freq == 0:
                 print('[VAL] Epoch: {}/{}/{}, Batch: {}/{}, BatchAcc: {:.4f}, BatchLoss: {:.4f}, BatchTime: {:.4f}'.format(step,
-                      epoch, args.epochs, i, epoch_data_len/args.batch_size, correct_.double()/image.size(0),
+                      epoch, args.epochs, i, math.ceil(epoch_data_len/args.batch_size), correct_.double()/image.size(0),
                       loss_/image.size(0), batch_end-batch_start))
 
         epoch_loss = running_loss / epoch_data_len
@@ -165,7 +168,7 @@ def main(args):
     num_ftrs = model.fc.in_features
     model.fc = nn.Linear(num_ftrs, len(classes))
     #model.fc = FC(num_ftrs, len(classes))
-    print(model)
+    #print(model)
 
     # support muti gpu
     model = nn.DataParallel(model, device_ids=args.device)

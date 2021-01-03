@@ -54,6 +54,7 @@ def main(args):
             print('{}\t{}\t{}'.format(image, classes[index], index))
             sys.stdout.flush()
         except:
+            print(image)
             traceback.print_exc()
 
 
@@ -63,7 +64,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--test-path', default='./data/beauty', help='dataset')
     parser.add_argument('--model', default='resnet101', help='model')
-    parser.add_argument('--device', default=[0,1,2,3], help='device')
+    parser.add_argument('--device', default=[0], help='device')
     parser.add_argument('-b', '--batch-size', default=32, type=int)
     parser.add_argument('-j', '--workers', default=16, type=int, metavar='N',
                         help='number of data loading workers (default: 16)')
