@@ -43,7 +43,8 @@ def main(args):
         try:
             image_ = args.test_path + '/' + image
 
-            image_tensor = transformation(Image.open(image_)).float()
+            #image_tensor = transformation(Image.open(image_)).float()
+            image_tensor = transformation(Image.open(image_).convert('RGB')).float()
             image_tensor = image_tensor.unsqueeze_(0)
             input = image_tensor.cuda()
             output = model(input)
