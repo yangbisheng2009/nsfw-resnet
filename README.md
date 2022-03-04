@@ -82,9 +82,6 @@ Thanks for my workmate Kuai Li. He gave me lots of good suggestion.
 
 ## Join us
 If you have good points.Join us!
-You can attach me by:  
-yangbisheng2009@gmail.com  
-https://twitter.com/yangbisheng2009
 
 ## References
 https://github.com/GantMan/nsfw_model  
